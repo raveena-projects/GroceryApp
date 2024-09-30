@@ -24,7 +24,7 @@ $sql = "INSERT INTO users (first_name, last_name, email, password)
         VALUES ('$firstName', '$lastName', '$email', '$password')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo json_encode(array('success' => true,'message':"user added"))
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
